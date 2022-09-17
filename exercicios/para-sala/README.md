@@ -15,7 +15,7 @@ Terminou o exercício? Dá uma olhada nessa checklist e confere se tá tudo cert
 
 ```js
 function convertCelsiusToFahrenheit(temperature){
-    var tempConverte = temperature * 9 / 5 + 32;
+    var tempConverd = temperature * 9 / 5 + 32;
      
     return tempConverted
 }
