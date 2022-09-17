@@ -45,8 +45,7 @@ class Calculadora {
         return num1 * this.fatorial(num1 - 1)
     }
     somaDivide = (num1, num2, num3) = {
-        const  soma = this.soma (num1 + num2) 
-       
+        const soma = this.soma(num1)
         
      }
 }
