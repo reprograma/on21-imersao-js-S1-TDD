@@ -20,4 +20,14 @@ function checkEvenNumber(num){
     return result;
 }
 
-module.exports = convertCelsiusToFahrenheit, checkEvenNumber;
+function sum(num1, num2) {
+    if (num1 === num2) {
+        return (num1 + num2) * 3;
+    }
+    else num1 + num2;
+}
+
+function revert(string) {
+    return string.split('').reverse().join('');
+}
+module.exports = {convertCelsiusToFahrenheit, checkEvenNumber, sum, revert};
