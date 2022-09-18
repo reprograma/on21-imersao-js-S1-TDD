@@ -8,8 +8,11 @@ function saldo() {
   return contaBancaria.saldo;
 }
 
-function deposito(num) {
-  novoSaldo = contaBancaria.saldo + num;
+function deposito(valorDeposito) {
+  novoSaldo = contaBancaria.saldo + valorDeposito;
+  if (valorDeposito < 0) {
+    novoSaldo = "Você não pode fazer esta operação";
+  }
   return novoSaldo;
 }
 
@@ -17,7 +20,9 @@ function saque(valorSaque) {
   let novoSaldo = contaBancaria.saldo - valorSaque;
   const limiteTotal = contaBancaria.saldo + contaBancaria.limiteDaConta;
 
-  if (valorSaque > limiteTotal) {
+  if (valorSaque < 0) {
+    novoSaldo = "Você não pode fazer esta operação";
+  } else if (valorSaque > limiteTotal) {
     novoSaldo = "Você não possui saldo nem limite desponível para saque";
   }
   return novoSaldo;
