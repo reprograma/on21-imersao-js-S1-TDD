@@ -10,7 +10,7 @@ describe("checando se é impar ou par", () => {
     test("deve retornar se o parâmetro é um número", () => {
         const resultado = checkEvenNumber("banana")
 
-        expect(resultado).toBeNaN("banana não é um número")
+        expect(resultado).toBe("banana não é um número")
     })
 })
 
@@ -27,7 +27,7 @@ describe("Sum function", () => {
 });
 
 describe("RevertString function", () => {
-    test.only("'casa' => 'asac'", () => {
+    test("'casa' => 'asac'", () => {
         expect(revert('casa')).toEqual('asac');
     });
 
