@@ -18,7 +18,21 @@ function checkEvenNumber(num) {
 
   return result;
 }
+
+function sum(num1, num2) {
+  if (num1 == num2) {
+    return 3 * (num1 + num2);
+  }
+  return num1 + num2;
+}
+
+function revert(str) {
+  return str.split("").reverse().join("");
+}
+
 module.exports = {
   convertCelsiusToFahrenheit,
   checkEvenNumber,
+  sum,
+  revert,
 };
