@@ -1,10 +1,13 @@
 const {
   convertCelsiusToFahrenheit,
   checkEvenNumber,
+  jokenpo,
   sum,
   revert,
   Calculadora,
   calculaTroco,
+  generateCombinations,
+  allKeys,
 } = require("../index");
 
 //1
@@ -27,6 +30,33 @@ describe("Função de checar número", () => {
     const expectedResult = variable + " é um número par";
     const receivedResult = checkEvenNumber(variable);
     expect(receivedResult).toEqual(expectedResult);
+  });
+});
+
+//3
+describe("Função de jokenpo", () => {
+  test("Deve retornar empate", () => {
+    expect(jokenpo("pedra", "pedra")).toEqual("Empate!");
+  });
+  test("Deve retornar vitoria do jogador 1", () => {
+    expect(jokenpo("pedra", "tesoura")).toEqual("Jogador 1 venceu!");
+  });
+  test("Deve retornar vitoria do jogador 2", () => {
+    expect(jokenpo("tesoura", "pedra")).toEqual("Jogador 2 venceu!");
+  });
+});
+
+//4
+describe("Função de gerar combinações", () => {
+  test("Retorna array vazia ao passar numeros ", () => {
+    expect(generateCombinations(4)).toHaveLength(0);
+  });
+});
+
+//5
+describe("Função de Chaves", () => {
+  test("Retorna array vazia ao passar string", () => {
+    expect(allKeys("banana")).toHaveLength(0);
   });
 });
 
