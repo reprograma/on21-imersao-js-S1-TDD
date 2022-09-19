@@ -38,32 +38,33 @@ function jokenpo(jogada1, jogada2){
 }
 
 // *****************
-function generateCombinations(word)
+function gerarCombinacao(palavra)
 {
-    const chars = [];
-    for (let x = 0, y = 1; x < word.length; x++, y++) 
+    const caracteres = [];
+    for (let x = 0, y = 1; x < palavra.length; x++, y++) 
     {
-        chars[x] = word.substring(x, y);
+        caracteres[x] = palavra.substring(x, y);
     }
-    const combinations = [];
+
+    const combinacoes = [];
     let temp = "";
-    const combinationsLen = Math.pow(2, chars.length);
+    const combinationsLen = Math.pow(2, caracteres.length);
 
     for (let i = 0; i < combinationsLen; i++)
     {
         temp = "";
-        for (let j = 0; j < chars.length; j++) {
+        for (let j = 0; j < caracteres.length; j++) {
             if ((i & Math.pow(2,j))){ 
-                temp += chars[j];
+                temp += caracteres[j];
             }
         }
         if (temp !== "")
         {
-            combinations.push(temp);
+            combinacoes.push(temp);
         }
     }
     
-    return combinations;
+    return combinacoes;
 }
 
 // *****************
@@ -73,11 +74,13 @@ function allKeys(obj) {
     }
     
     const keys = [];
+
     for (const key in obj){
         keys.push(key);
     } 
     return keys;
 }
+
 function isObject(obj) {
     const type = typeof obj;
     return type === 'function' || type === 'object' && !!obj;
@@ -106,4 +109,7 @@ module.exports = {
   soma,
   reverterString,
   jokenpo,
+  gerarCombinacao,
+  allKeys,
+  isObject,
 };
