@@ -18,18 +18,16 @@ describe("função de conversão de temperatura", () => {
 
 // *****************
 describe("checa se o numero é par ou impar", () => {
+
   test("testa se é um numero", () => {
-    const resultado = verificarNumero("banana");
-    expect(resultado).not.toBeNaN();
+    expect(verificarNumero("banana")).not.toBeNaN();
   });
 
   test("testa se é par", () => {
-    const resultado = verificarNumero(4);
-    expect(resultado).toEqual("4 é um número par");
+    expect(verificarNumero(4)).toEqual("4 é um número par");
   });
   test("testa se é impar", () => {
-    const resultado = verificarNumero(3);
-    expect(resultado).toEqual("3 é um número ímpar");
+    expect(verificarNumero(3)).toEqual("3 é um número ímpar");
   });
 });
 
@@ -79,7 +77,12 @@ describe("pedra papel e tesoura", () => {
 // seria necessário fazer um teste para cada possibilidade de jogada????
 
 // *****************
-// TESTE 4
+describe('gerar combinações de caracteres num array',()=>{
+  test('Testa combinação',()=>{
+    let resultado = gerarCombinacao('ovo')
+    expect(resultado).toEqual(["o", "v", "ov", "o", "oo", "vo", "ovo"])
+  })
+})
 
 // *****************
 describe("Verificar as chaves", () => {
