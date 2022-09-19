@@ -1,8 +1,8 @@
-const {convertCelsiusToFahrenhei} = require ('../index')
-const {checkEvenNumber} = require ('../index.js')
+const {convertCelsiusToFahrenheit} = require ('../index')
+const {checkEvenNumber} = require ('../index')
 const {sum} = require ('../index')
 const {revert} = require ('../index')
-const {Calculadora} = require ('../index')
+
 
 describe ("Função de conversão", () => {
     test ("deve converter de calsius para fahrenheit", () => {
@@ -14,7 +14,7 @@ describe("checando se é impar ou par", () => {
     test("deve retornar se é o parametro número", () => {
         const resultado = checkEvenNumber("banana")
 
-        expect(resultado).toBeNaN()
+        expect(resultado).toEqual("banana não é um número")
     })
 })
 
@@ -40,27 +40,3 @@ describe("RevertString function", () => {
     });
 });
 
-describe("Criar calculadora", () => {
-    const calculando = new Calculadora();
-
-    test("soma", () => {
-        expect(calculando.soma(1,1)).toEqual(2)
-    })
-    test("subtrai", () => {
-        expect(calculando.subtrai(1,1)).toEqual(0)
-   })
-   test("multiplica", () => {
-    expect(calculando.multiplica(1,1)).toEqual(1)
-
-})
-test("divide", () => {
-    expect(calculando.divide(1,1)).toEqual(1)
-})
-test("fatorial", () => {
-    expect(calculando.fatorial(5)).toEqual(120)
-})
-
-test("soma com divisão", () => {
-    expect(calculando.somaAndDivide(8,4,2)).toEqual(6)
-})
-})
