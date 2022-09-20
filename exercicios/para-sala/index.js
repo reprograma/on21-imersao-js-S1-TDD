@@ -32,7 +32,6 @@ function revert(string) {
     return string.split('').reverse().join('');
 }
 
-
 class Calculadora {
     constructor() {
     }

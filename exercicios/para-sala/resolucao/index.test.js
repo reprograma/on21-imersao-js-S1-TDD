@@ -1,8 +1,4 @@
-const { convertCelsiusToFahrenheit } = require('../index');
-const { checkEvenNumber } = require('../index');
-const { sum } = require('../index');
-const { revert } = require('../index');
-const { Calculadora } = require('../index');
+const { convertCelsiusToFahrenheit, checkEvenNumber, sum, revert, Calculadora } = require('../index');
 
 describe('Function ConvertToCelsiusToFahrenheit()', () => {
     test("", () => {
