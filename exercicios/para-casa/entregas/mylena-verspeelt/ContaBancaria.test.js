@@ -14,36 +14,34 @@ describe("Consulta de saldo", () => {
   // ***********************************
 
   describe("Saque", () => {
-    test("Se há saldo suficiente", () => {
-      const valorSolicitadoParaSaque = 300;
-      expect(valorSolicitadoParaSaque).toEqual(false);
-    });
     test("Saque com saldo suficiente", () => {
-      expect(saque(70)).toEqual(30); //ele vai retornar o valor do saldo que restou
+      expect(saque(70)).toEqual(30);                       
     });
-
-    test("Saque com limite disponível", () => {
-      expect(saque(40)).toEqual(-40); //retorna o saldo restante
+    test("Saque com limite especial", () => {
+      expect(saque(300)).toBe(-200);              
     });
+    test('Saque indisponivel', ()=> {
+      expect(saque(800)).toEqual('Não é possível realizar o saque.')
+    })
   });
 
   // ***********************************
   describe("Depósito", () => {
     test("Depositar dinheiro", () => {
-      expect(depositar(30)).toEqual(80); //ele vai retornar o valor do saldo atualizado
+      expect(depositar(30)).toEqual(80); 
     });
   });
 
   // ***********************************
-  describe("Ajudar limite da conta", () => {
+  describe("Ajustar limite da conta", () => {
     test("Aumentar limite", () => {
-      expect(aumentarLimite(100)).toEqual(200); //retorna o valor final do limite disponivel
+      expect(aumentarLimite(100)).toEqual(200); 
     });
     test("Diminuir limite", () => {
-      expect(diminuirLimite(50)).toEqual(50); //retorna o valor final do limite disponivel
+      expect(diminuirLimite(50)).toEqual(50);
     });
     test("Desativar opção de limite disponivel", () => {
-      expect(desativarLimite(true)).toBe(false); //retorna a chave limite_disponivel.ativo
+      expect(desativarLimite(true)).toBe(false); 
     });
   });
 });
