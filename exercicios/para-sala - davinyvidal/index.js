@@ -61,4 +61,24 @@ class Calculadora {
 }
 
 
-module.exports = { convertCelsiusToFahrenheit, checkEvenNumber, sum, revert, Calculadora };
+function receberMoedas(valorTroco, moedasDisponiveis) {
+    let valorTrocoAtual = valorTroco
+
+    let arrayDeMoedas = []
+
+    for (let i = 0; valorTrocoAtual > 0; i)
+     {
+      const divisao = parseFloat((valorTrocoAtual / moedasDisponiveis[i]).toFixed(2))
+      if (divisao >= 1) {
+        arrayDeMoedas.push(moedasDisponiveis[i])
+        valorTrocoAtual = parseFloat((valorTrocoAtual - moedasDisponiveis[i]).toFixed(2))
+      } else {
+        i++
+      }
+     }  
+
+    return arrayDeMoedas
+  }
+
+
+module.exports = { convertCelsiusToFahrenheit, checkEvenNumber, sum, revert, receberMoedas, Calculadora };
