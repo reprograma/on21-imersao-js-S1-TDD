@@ -36,26 +36,30 @@ describe("checagem de não número", () => {
 //EXERCÍCIO 3 
 
 describe("checagem de empate", () => {
-  test(" deve retornar 2 é um número par", () => {
-    const result = checkEvenNumber("2")
+  test(" deve retornar Empate", () => {
+    const result = jokenpo("pedra", "pedra")
 
-    expect(result).toEqual("2 é um número par")
+    expect(result).toEqual("Empate!")
   })
 })
 describe("checagem da vitória jogada1", () => {
-  test(" deve retornar 2 é um número par", () => {
-    const result = checkEvenNumber("2")
+  test(" deve retornar Jogador 1 venceu!", () => {
+    const result = jokenpo("pedra", "tesoura")
 
-    expect(result).toEqual("2 é um número par")
+    expect(result).toEqual("Jogador 1 venceu!")
   })
 })
 describe("checagem da vitória jogada 2", () => {
-  test(" deve retornar 2 é um número par", () => {
-    const result = checkEvenNumber("2")
+  test(" deve retornar Jogador 2 venceu!", () => {
+    const result = jokenpo("papel","tesoura")
 
-    expect(result).toEqual("2 é um número par")
+    expect(result).toEqual("Jogador 2 venceu!")
   })
 })
+
+
+///exercício 4
+
 
 describe("Arithmetic functions", () => {
   test('2 + 3 = 5', () => {
