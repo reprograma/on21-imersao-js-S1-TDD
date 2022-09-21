@@ -1,6 +1,6 @@
 const {
 Calculadora
-} = require("../resolucao/calculadora");
+} = require("../calculadora");
 
 describe("Calculadora", () => {
   test("soma", () => {

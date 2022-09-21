@@ -1,4 +1,4 @@
-const { saldo, saque, deposito, ajusteLimite } = require("./resolucao");
+const { saldo, saque, deposito, ajusteLimite } = require("../resolucao");
 
 describe("Recursos da conta bancária", () => {
   describe("Consulta de saldo", () => {
