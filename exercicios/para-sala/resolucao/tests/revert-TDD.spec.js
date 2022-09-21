@@ -1,4 +1,4 @@
-const revert = require('../resolucao/revert-TDD')
+const revert = require('../../resolucao/revert-TDD')
 
 describe("RevertString function", () => {
     test("Deve receber uma string 'casa' e retornar a string invert 'asac'", () => {

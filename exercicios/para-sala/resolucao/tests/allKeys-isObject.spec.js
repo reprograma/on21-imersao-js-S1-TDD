@@ -1,4 +1,4 @@
-const {allKeys, isObject} = require('../resolucao/allKeys-isObject')
+const {allKeys, isObject} = require('../allKeys-isObject')
 
 
 describe('allKeys', () => {

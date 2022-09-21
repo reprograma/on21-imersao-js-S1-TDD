@@ -1,12 +1,9 @@
-const checkEvenNumber = require('../resolucao/checkEvenNumber')
+const checkEvenNumber = require('../../resolucao/checkEvenNumber')
 
 describe ('checkEvenNumber', () => {
     it('Verifica que não é um numero ', () => {
-
         const result = checkEvenNumber("test")
-        // expect(result).toBeNaN()
         expect(result).toBe("test não é um número")
-
     })
 
     // para numero usamos ToBeEqual

@@ -1,4 +1,4 @@
-const convertCelsiusToFahrenheit = require('./convertCelsiusToFahrenheit')
+const convertCelsiusToFahrenheit = require('../../resolucao/convertCelsiusToFahrenheit')
 
 
 describe('convertCelsiusToFahrenheit', () => {

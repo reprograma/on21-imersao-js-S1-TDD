@@ -1,4 +1,4 @@
-const jokenpo = require('../resolucao/jokenpo')
+const jokenpo = require('../../resolucao/jokenpo')
 
 describe('jokenpo', () => {
 

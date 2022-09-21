@@ -1,4 +1,4 @@
-const generateCombinations = require('../resolucao/generateCombinations')
+const generateCombinations = require('../../resolucao/generateCombinations')
 
 describe('generateCombinations', () => {
 

@@ -1,4 +1,4 @@
-const sum = require('../resolucao/sum-TDD')
+const sum = require('../../resolucao/sum-TDD')
 
 describe("Sum function", () => {
     it("Deve retornar a soma de 5 e 1", () => {
