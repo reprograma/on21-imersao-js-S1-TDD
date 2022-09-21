@@ -30,9 +30,10 @@ class Calculadora {
     return resultado;
   }
 
-  static valorDisponivel(soma, subtracao){
+  static valorDisponivel(valor1, valor2, valor3){
+    const soma = this.soma(valor1, valor2)
 
-    return soma - subtracao
+    return this.divisao(soma, valor3)
   }
 }
 
