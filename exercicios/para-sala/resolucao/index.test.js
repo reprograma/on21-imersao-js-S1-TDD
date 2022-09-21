@@ -112,13 +112,13 @@ describe("Classe Calculadora", () => {
 //9
 describe("Função de Troco", () => {
   const moedas = [1, 5, 10, 25, 50, 100];
-  test("Deve calcular o troco em centavos", () => {
-    const esperado = [50, 10, 5];
-    const result = calculaTroco(65, moedas);
-    expect(result).toEqual(esperado);
+  test("Deve calcular o troco 0.65 em centavos", () => {
+    const resultadoEsperado = [50, 10, 5];
+    const resultadoRecebido = calculaTroco(65, moedas);
+    expect(resultadoRecebido).toStrictEqual(resultadoEsperado);
   });
-  test("Deve verificar se é um numero", () => {
-    const result = calculaTroco("banana", moedas);
-    expect(result).toBeNaN();
+  test("Deve retornar NaN ao passar uma string", () => {
+    const resultado = calculaTroco("banana", moedas);
+    expect(resultado).toBeNaN();
   });
 });
