@@ -17,5 +17,4 @@ class Calculadora {
     
     
 };
- module.exports = {
-    Calculadora};
+ module.exports = {Calculadora};
