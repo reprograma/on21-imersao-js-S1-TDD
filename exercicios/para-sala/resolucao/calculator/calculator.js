@@ -1,31 +1,43 @@
-// class Calculator {
-//     numero1;
-//     numero2;
-//     // constructor (soma, subtracao, multiplicacao, divisao, fatorial) {
-//     //     this.soma = soma;
-//     //     this.subtracao = subtracao;
-//     //     this.multiplicacao = multiplicacao;
-//     //     this.divisao = divisao; 
-//     //     this.fatorial = fatorial;
-//     // }
-//     // soma(num1, num2) {
-//     //     return num1 + num2
-//     // }
-//     constructor() {}
-
-//     soma(numero1, numero2) {
-//         return numero1 + numero2
-//     }
-// }
-
 class Calculator {
-    constructor() {}
+    constructor(number1, number2) {
+        this.number1 = number1;
+        this.number2 = number2;
+    }
 
-    soma(numero1, numero2) {
-        return numero1 + numero2
+    getSoma() {
+        return this.number1 + this.number2;
+    }
+    getSubtracao() {
+        return this.number1 - this.number2;
+    }
+    getMultiplicacao() {
+        return this.number1 * this.number2;
+    }
+
+    getDivisao() {
+        return this.number1 / this.number2;
     }
 }
 
+class Fatorial extends Calculator {
+    constructor(number1) {
+        super(number1);
+    }
 
+    getFatorial() {
+        let fatorial = 1;
+        for (let i = 1; i <= this.number1; i++) {
+            fatorial *= i;
+        }
+        return fatorial;
+    }
+}
 
-module.exports = Calculator;
+const calculator = new Calculator(1, 2);
+const fatorial = new Fatorial(6);
+
+console.log(fatorial.getFatorial());
+
+console.log(calculator.getSubtracao());
+
+module.exports = { Calculator, Fatorial };
