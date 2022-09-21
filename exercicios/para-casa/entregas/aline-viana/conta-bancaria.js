@@ -7,48 +7,43 @@ class ContaBancaria {
         this.saque = saque;
     }
 
-    PegarDadosDoTitular() {
+    visualizarDadosDoTitular() {
         return this.name && this.saldo && this.limite;
     }
 
-    PegarConsultaDeSaldo() {
+    consultaDeSaldo() {
         return this.saldo;
     }
 
-    PegarDeposito() {
+    verificarDeposito() {
         return this.deposito;
     }
 
-    PegarSaqueBancario() {
+    realizarSaqueBancario() {
         if (this.saldo >= this.saque) {
             return "Saque realizado! Saldo atual: " + (this.saldo - this.saque);
         }
         if (this.saldo <= this.saque) {
-            const VerificarLimite = (this.limite + this.saldo) >= this.saque ? "Conseguimos liberar para você! Mas no momento você está no negativo. O saldo atual do seu limite: " + -((this.saldo - this.saque) + this.limite) : "Lamentamos, mas você não possui saldo suficiente para realizar o saque.";
-            return VerificarLimite;
+            const verificarLimite = (this.limite + this.saldo) >= this.saque ? "Conseguimos liberar para você! Mas no momento você está no negativo. O saldo atual do seu limite: " + -((this.saldo - this.saque) + this.limite) : "Lamentamos, mas você não possui saldo suficiente para realizar o saque.";
+            return verificarLimite;
         } else {
             return "Lamentamos, mas não foi possível realizar o saque";
         }
     }
 
-    PegarAumentoNoLimite() {
+    aumentoNoLimite() {
         return "Conforme seu cadastro, conseguimos liberar mais R$: 200,00 para aumentar o seu limite. Seu novo limite é: " + (this.limite + 200);
     }
 
-    PegarDiminuirLimite() {
+    diminuirLimite() {
         return "Iremos diminuir o seu limite em R$: 200,00. Seu novo limite é: " + (this.limite - 200);
     }
 
-    PegarDesativarLimite() {
+    pegarDesativarLimite() {
         return "Seu limite foi desativado com sucesso!";
     }
 
 }
 
-const contaBancaria = new ContaBancaria('Aline Viana', 1000, 200, 0, 1001);
-
-
-console.log(contaBancaria.PegarSaqueBancario());
-// console.log(contaBancaria.PegarDesativarLimite());
 
 module.exports = { ContaBancaria };
