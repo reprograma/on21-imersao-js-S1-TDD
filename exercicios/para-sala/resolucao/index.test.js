@@ -1,4 +1,4 @@
-const { convertCelsiusToFahrenheit, checkEvenNumber, sum, revert } = require('../index')
+const { convertCelsiusToFahrenheit, checkEvenNumber, sum, revert } = require('./index')
 
 describe('convertCelsiusToFahrenheit', () => {
     test('should return 32 when temperature is 0', () => {
