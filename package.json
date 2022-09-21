@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/reprograma/on21-imersao-js-S1-TDD#readme",
   "devDependencies": {
-    "jest": "^29.0.3"
+    "jest": "^25.2.2"
+  },
+  "dependencies": {
+    "supertest": "^6.2.4"
   }
 }
