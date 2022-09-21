@@ -60,6 +60,26 @@ describe("checagem da vitória jogada 2", () => {
 
 ///exercício 4
 
+describe("checagem de combinações", () => {
+  test(" deve retornar um array com possiveis combinações", () => {
+    const result = generateCombinations("pai")
+
+
+  })
+})
+
+describe("checagem de combinações", () => {
+  const expected = generateCombinations('pai');
+  it('corresponde mesmo que recebido contenha elementos adicionais', () => {
+    expect(expected).toEqual(expect.arrayContaining([ 'a', 'ai', 'pai']));
+  });
+  it('não corresponde se recebido não contém elementos esperados', () => {
+    expect(['pppai', 'jjjai']).not.toEqual(expected);
+  });
+});
+
+// EXERCÍCIO 5
+
 
 describe("Arithmetic functions", () => {
   test('2 + 3 = 5', () => {
