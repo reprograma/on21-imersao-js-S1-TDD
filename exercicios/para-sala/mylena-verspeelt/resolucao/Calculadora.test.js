@@ -24,9 +24,3 @@ describe("calculadora",()=>{
     })
 })
 
-
-
-// Crie uma classe chamada Calculadora;
-// Crie os métodos: soma, subtração, multiplicação, divisão e fatorial;
-// Use a criatividade e crie um último método que utilize pelo menos dois dos métodos criados anteriormente.
-// 9) Escreva um teste (e depois a função) para uma função calcule como um troco (centavos) será dado em moedas. A função deve receber o valor do troco, e um array com as moedas disponíveis.

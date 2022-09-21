@@ -7,6 +7,7 @@ const {
   gerarCombinacao,
   allKeys,
   isObject,
+  receberMoedas,
 } = require("./index");
 
 // *****************
@@ -102,3 +103,19 @@ describe("Verificar as chaves", () => {
   });
 });
 // *****************
+
+describe('Calcular troco', () => {
+  const moedasDisponiveis = [1, 0.50, 0.25, 0.10, 0.05]
+  test('Calcula troco pra 1 real retorna 1 moeda de 1 real', ()=>{
+    expect(receberMoedas(1, moedasDisponiveis)).toStrictEqual([1])
+  })
+  test('Calcula troco pra 2 reais e retornar um array [1, 1]', () => {
+    expect(receberMoedas(2, moedasDisponiveis)).toEqual([1, 1])
+  })
+
+  test('Calcula troco pra 2,10 e retornar um array [1 ,1, 0.10]', () => {
+    expect(receberMoedas(2.10, moedasDisponiveis)).toEqual([1 , 1, 0.10])
+  })
+
+})
+
