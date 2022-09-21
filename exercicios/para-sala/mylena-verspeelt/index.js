@@ -1,14 +1,9 @@
-// ******************* 1)
 function converterCelsiusPraFahrenheit(temperatura) {
   var temperaturaConvertida = (temperatura * 9) / 5 + 32;
-
   return temperaturaConvertida;
 }
-
-// ******************* 2)
 function verificarNumero(inputUsuario) {
   let resultado = "";
-
   if (isNaN(inputUsuario)) {
     resultado = inputUsuario + " não é um número";
   } else {
@@ -20,12 +15,10 @@ function verificarNumero(inputUsuario) {
   }
   return resultado;
 }
-// ******************* 3)
 function jokenpo(jogada1, jogada2) {
   if (jogada1 === jogada2) {
     return "Empate!";
   }
-
   if (
     (jogada1 === "pedra" && jogada2 === "papel") ||
     (jogada1 === "papel" && jogada2 === "tesoura") ||
@@ -33,21 +26,16 @@ function jokenpo(jogada1, jogada2) {
   ) {
     return "Jogador 2 venceu!";
   }
-
   return "Jogador 1 venceu!";
 }
-
-// ******************* 4)
 function gerarCombinacao(palavra) {
   const caracteres = [];
   for (let x = 0, y = 1; x < palavra.length; x++, y++) {
     caracteres[x] = palavra.substring(x, y);
   }
-
   const combinacoes = [];
   let temp = "";
   const combinationsLen = Math.pow(2, caracteres.length);
-
   for (let i = 0; i < combinationsLen; i++) {
     temp = "";
     for (let j = 0; j < caracteres.length; j++) {
@@ -59,30 +47,22 @@ function gerarCombinacao(palavra) {
       combinacoes.push(temp);
     }
   }
-
   return combinacoes;
 }
-
-// ******************* 5)
 function allKeys(obj) {
   if (!isObject(obj)) {
     return [];
   }
-
   const keys = [];
-
   for (const key in obj) {
     keys.push(key);
   }
   return keys;
 }
-
 function isObject(obj) {
   const type = typeof obj;
   return type === "function" || (type === "object" && !!obj);
 }
-
-// ******************* 6)
 function soma(num1, num2) {
   if (num1 !== num2) {
     return num1 + num2;
@@ -90,18 +70,12 @@ function soma(num1, num2) {
     return 3 * (num1 + num2);
   }
 }
-
-// ******************* 7)
 function reverterString(string) {
   return string.split("").reverse().join("");
 }
-
-// ******************* 9)
-
 function receberMoedas(valorTroco, moedasDisponiveis) {
   let valorTrocoAtual = valorTroco;
   let arrayDeMoedas = [];
-
   moedasDisponiveis.forEach((moeda) => {
     while (valorTrocoAtual >= moeda) {
       valorTrocoAtual -= moeda;

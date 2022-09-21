@@ -10,7 +10,6 @@ function consultarSaldo() {
   };
   return conta.saldo;
 }
-
 function saque(valorSolicitado) {
   const conta = {
     nome_do_titular: "Marta",
@@ -21,7 +20,6 @@ function saque(valorSolicitado) {
       limite: 400,
     },
   };
-
   if (valorSolicitado <= conta.saldo) {
     return conta.saldo - valorSolicitado;
   } else if (
@@ -34,7 +32,6 @@ function saque(valorSolicitado) {
     return "Não é possível realizar o saque.";
   }
 }
-
 function depositar(valorDepositado) {
   const conta = {
     nome_do_titular: "João",
@@ -45,10 +42,8 @@ function depositar(valorDepositado) {
       limite: 100,
     },
   };
-
   return (conta.saldo += valorDepositado);
 }
-
 function desativarLimite(booleano) {
   const conta = {
     nome_do_titular: "Nathaly",
@@ -59,10 +54,8 @@ function desativarLimite(booleano) {
       limite: 0,
     },
   };
-
   return (conta.limite_disponivel.ativo = !booleano);
 }
-
 function diminuirLimite(valor) {
   const conta = {
     nome_do_titular: "Ana",
@@ -73,10 +66,8 @@ function diminuirLimite(valor) {
       limite: 100,
     },
   };
-
   return (conta.limite_disponivel.limite -= valor);
 }
-
 function aumentarLimite(valor) {
   const conta = {
     nome_do_titular: "Jorge",
@@ -87,7 +78,6 @@ function aumentarLimite(valor) {
       limite: 100,
     },
   };
-
   return (conta.limite_disponivel.limite += valor);
 }
 

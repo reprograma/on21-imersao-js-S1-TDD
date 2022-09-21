@@ -1,5 +1,4 @@
 const {Calculadora} = require('./Calculadora')
-
 describe("Testar Calculadora",()=>{
     test('Testa função de soma', ()=>{
         expect(Calculadora.soma(2, 2)).toEqual(4)
