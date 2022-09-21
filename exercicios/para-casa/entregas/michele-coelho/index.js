@@ -18,7 +18,7 @@ const contaBancaria = {
     },
 
     saque(valor) {
-        let novoValor;
+      
         if (dadosCliente.saldo < valor) {
             if (dadosCliente.limite > valor) {
                 dadosCliente.limite = dadosCliente.limite - valor;
