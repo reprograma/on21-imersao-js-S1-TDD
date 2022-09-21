@@ -1,10 +1,11 @@
+// ******************* 1)
 function converterCelsiusPraFahrenheit(temperatura) {
   var temperaturaConvertida = (temperatura * 9) / 5 + 32;
 
   return temperaturaConvertida;
 }
 
-// *****************
+// ******************* 2)
 function verificarNumero(inputUsuario) {
   let resultado = "";
 
@@ -19,8 +20,7 @@ function verificarNumero(inputUsuario) {
   }
   return resultado;
 }
-
-// *****************
+// ******************* 3)
 function jokenpo(jogada1, jogada2) {
   if (jogada1 === jogada2) {
     return "Empate!";
@@ -37,7 +37,7 @@ function jokenpo(jogada1, jogada2) {
   return "Jogador 1 venceu!";
 }
 
-// *****************
+// ******************* 4)
 function gerarCombinacao(palavra) {
   const caracteres = [];
   for (let x = 0, y = 1; x < palavra.length; x++, y++) {
@@ -63,7 +63,7 @@ function gerarCombinacao(palavra) {
   return combinacoes;
 }
 
-// *****************
+// ******************* 5)
 function allKeys(obj) {
   if (!isObject(obj)) {
     return [];
@@ -82,7 +82,7 @@ function isObject(obj) {
   return type === "function" || (type === "object" && !!obj);
 }
 
-// ***************** TDD
+// ******************* 6)
 function soma(num1, num2) {
   if (num1 !== num2) {
     return num1 + num2;
@@ -91,35 +91,34 @@ function soma(num1, num2) {
   }
 }
 
-// *****************
+// ******************* 7)
 function reverterString(string) {
   return string.split("").reverse().join("");
 }
 
-// *****************
+// ******************* 9)
 
-function receberMoedas(valorTroco, moedasDisponiveis){
-let valorTrocoAtual = valorTroco
-let arrayDeMoedas = []
+function receberMoedas(valorTroco, moedasDisponiveis) {
+  let valorTrocoAtual = valorTroco;
+  let arrayDeMoedas = [];
 
-moedasDisponiveis.forEach((moeda) => {
-while (valorTrocoAtual >= moeda){
-  valorTrocoAtual -= moeda
-  arrayDeMoedas.push(moeda)
+  moedasDisponiveis.forEach((moeda) => {
+    while (valorTrocoAtual >= moeda) {
+      valorTrocoAtual -= moeda;
+      arrayDeMoedas.push(moeda);
+    }
+  });
+  return arrayDeMoedas;
 }
-})
-return arrayDeMoedas
-}
-
 
 module.exports = {
   converterCelsiusPraFahrenheit,
   verificarNumero,
-  soma,
-  reverterString,
   jokenpo,
   gerarCombinacao,
   allKeys,
   isObject,
+  soma,
+  reverterString,
   receberMoedas,
 };

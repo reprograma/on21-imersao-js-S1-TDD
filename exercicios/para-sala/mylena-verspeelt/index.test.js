@@ -1,61 +1,38 @@
 const {
   converterCelsiusPraFahrenheit,
-  soma,
   verificarNumero,
-  reverterString,
   jokenpo,
   gerarCombinacao,
   allKeys,
   isObject,
+  soma,
+  reverterString,
   receberMoedas,
 } = require("./index");
 
-// *****************
-describe("função de conversão de temperatura", () => {
-  test("deve converter de celcius pra fahrenheit", () => {
+// ******************* 1)
+describe("Função de conversão de temperatura", () => {
+  test("Deve converter de celcius pra fahrenheit", () => {
     expect(converterCelsiusPraFahrenheit(60)).toEqual(140);
   });
 });
 
-// *****************
-describe("checa se o numero é par ou impar", () => {
-
-  test("testa se é um numero", () => {
+// ******************* 2)
+describe("Checa se o numero é par ou impar", () => {
+  test("Testa se é um numero", () => {
     expect(verificarNumero("banana")).not.toBeNaN();
   });
 
-  test("testa se é par", () => {
+  test("Testa se é par", () => {
     expect(verificarNumero(4)).toEqual("4 é um número par");
   });
-  test("testa se é impar", () => {
+  test("Testa se é impar", () => {
     expect(verificarNumero(3)).toEqual("3 é um número ímpar");
   });
 });
 
-// *****************
-describe("Função de soma", () => {
-  test("(5, 1) => 6)", () => {
-    expect(soma(5, 1)).toEqual(6);
-  });
-  test("(1, 1) => 6)", () => {
-    expect(soma(1, 1)).toEqual(6);
-  });
-});
-
-// *****************
-describe("função de reverterString ", () => {
-  test("'casa' => 'asac'", () => {
-    expect(reverterString("casa")).toEqual("asac");
-  });
-
-  test("'javascript' => 'tpircsavaj'", () => {
-    expect(reverterString("javascript")).toEqual("tpircsavaj");
-  });
-});
-
-// *****************
-
-describe("pedra papel e tesoura", () => {
+// ******************* 3)
+describe("Pedra papel e tesoura", () => {
   test("Testa se a jogada1 for igual a jogada 2", () => {
     const jogada1 = "pedra";
     const jogada2 = "pedra";
@@ -75,17 +52,16 @@ describe("pedra papel e tesoura", () => {
     expect(resultado).toBe("Jogador 2 venceu!");
   });
 });
-// seria necessário fazer um teste para cada possibilidade de jogada????
 
-// *****************
-describe('gerar combinações de caracteres num array',()=>{
-  test('Testa combinação',()=>{
-    let resultado = gerarCombinacao('ovo')
-    expect(resultado).toEqual(["o", "v", "ov", "o", "oo", "vo", "ovo"])
-  })
-})
+// ******************* 4)
+describe("Gerar combinações de caracteres num array", () => {
+  test("Testa combinação", () => {
+    let resultado = gerarCombinacao("ovo");
+    expect(resultado).toEqual(["o", "v", "ov", "o", "oo", "vo", "ovo"]);
+  });
+});
 
-// *****************
+// ******************* 5)
 describe("Verificar as chaves", () => {
   test("Testa se o input do usuario é um objeto", () => {
     const objetoTeste = {};
@@ -102,20 +78,38 @@ describe("Verificar as chaves", () => {
     expect(resultado).toStrictEqual(["chave1", "chave2", "chave3"]);
   });
 });
-// *****************
 
-describe('Calcular troco', () => {
-  const moedasDisponiveis = [1, 0.50, 0.25, 0.10, 0.05]
-  test('Calcula troco pra 1 real retorna 1 moeda de 1 real', ()=>{
-    expect(receberMoedas(1, moedasDisponiveis)).toStrictEqual([1])
-  })
-  test('Calcula troco pra 2 reais e retornar um array [1, 1]', () => {
-    expect(receberMoedas(2, moedasDisponiveis)).toEqual([1, 1])
-  })
+// ******************* 6)
+describe("Função de soma", () => {
+  test("(5, 1) => 6)", () => {
+    expect(soma(5, 1)).toEqual(6);
+  });
+  test("(1, 1) => 6)", () => {
+    expect(soma(1, 1)).toEqual(6);
+  });
+});
 
-  test('Calcula troco pra 2,10 e retornar um array [1 ,1, 0.10]', () => {
-    expect(receberMoedas(2.10, moedasDisponiveis)).toEqual([1 , 1, 0.10])
-  })
+// ******************* 7)
+describe("Função de reverterString", () => {
+  test("'casa' => 'asac'", () => {
+    expect(reverterString("casa")).toEqual("asac");
+  });
+  test("'javascript' => 'tpircsavaj'", () => {
+    expect(reverterString("javascript")).toEqual("tpircsavaj");
+  });
+});
 
-})
+// ******************* 9)
+describe("Calcular troco em moedas", () => {
+  const moedasDisponiveis = [1, 0.5, 0.25, 0.1, 0.05];
+  test("Calcula troco pra 1 real retorna 1 moeda de 1 real", () => {
+    expect(receberMoedas(1, moedasDisponiveis)).toStrictEqual([1]);
+  });
+  test("Calcula troco pra 2 reais e retorna um array [1, 1]", () => {
+    expect(receberMoedas(2, moedasDisponiveis)).toEqual([1, 1]);
+  });
 
+  test("Calcula troco pra 2,10 e retorna um array [1 , 1, 0.10]", () => {
+    expect(receberMoedas(2.1, moedasDisponiveis)).toEqual([1, 1, 0.1]);
+  });
+});

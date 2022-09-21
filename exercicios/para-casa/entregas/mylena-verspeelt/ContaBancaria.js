@@ -8,8 +8,6 @@ function consultarSaldo() {
       limite: 400,
     },
   };
-
-  console.log(conta.saldo);
   return conta.saldo;
 }
 
@@ -97,7 +95,7 @@ module.exports = {
   consultarSaldo,
   saque,
   depositar,
-  desativarLimite,
   aumentarLimite,
   diminuirLimite,
+  desativarLimite,
 };

@@ -2,16 +2,16 @@ const {
   consultarSaldo,
   saque,
   depositar,
-  desativarLimite,
-  diminuirLimite,
   aumentarLimite,
+  diminuirLimite,
+  desativarLimite,
 } = require("./ContaBancaria");
 
 describe("Consulta de saldo", () => {
   test("Consultar saldo", () => {
     expect(consultarSaldo()).toEqual(100);
   });
-  // ***********************************
+// **************
 
   describe("Saque", () => {
     test("Saque com saldo suficiente", () => {
@@ -25,14 +25,14 @@ describe("Consulta de saldo", () => {
     })
   });
 
-  // ***********************************
+// **************
   describe("Depósito", () => {
     test("Depositar dinheiro", () => {
       expect(depositar(30)).toEqual(80); 
     });
   });
 
-  // ***********************************
+// **************
   describe("Ajustar limite da conta", () => {
     test("Aumentar limite", () => {
       expect(aumentarLimite(100)).toEqual(200); 
