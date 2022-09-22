@@ -86,12 +86,6 @@ class ContaBanco {
             this.activeLimit = true;
         }
     }
-
-
 }
-
-let user = new ContaBanco("Ariel", 20, 50);
-console.log(user.getBalance())
-
 
 module.exports = {ContaBanco};

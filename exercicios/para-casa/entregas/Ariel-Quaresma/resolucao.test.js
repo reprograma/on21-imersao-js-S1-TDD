@@ -6,6 +6,7 @@ const { ContaBanco } = require('./resolucao.js')
 //Se todos os atributos estão sendo setados corretamente e retornados pelos seus getters, e se estão aceitando valores vazios ou inválidos
 //Balanco, limite e nome do dono da conta
 
+
 describe("test if the inputs in the constructor of the class works, with name, balance and limit", () =>{
     //Testes a respeito do atributo nome
     describe("test if the validation of the name attribute works", () =>{
