@@ -1,7 +1,6 @@
 console.log("version 0.1 test - works!");
 const conta = require("./conta");
 
-let conta;
 describe("Informacoes da Conta Bancária", () => {
   beforeEach(() => {
     conta = new contaBancaria("Mabiá", 40000000, 80000000);
