@@ -1,5 +1,5 @@
 console.log("version 0.1 test - works!");
-const conta = require("./conta");
+const conta = require("./conta.js");
 
 describe("Informacoes da Conta Bancária", () => {
   beforeEach(() => {
