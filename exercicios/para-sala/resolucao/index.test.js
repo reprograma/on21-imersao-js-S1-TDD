@@ -6,7 +6,7 @@
 //aqui é a sintaxe do teste, expect() recebe o que eu desejo testar, que função e com qual parâmetro
 //e o resultado que eu espero no .toEqual(), que tem variações também (toBe(), notToBe(), etc...)
 
-const {convertCelsiusToFahrenheit, checkEvenNumber} = require ('../index');
+const {convertCelsiusToFahrenheit, checkEvenNumber} = require ('./index.js');
 const {Calculadora} = require ('../resolucao.js');
 
 
