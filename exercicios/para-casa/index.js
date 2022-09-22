@@ -24,7 +24,7 @@ const ValorLimite = () =>  {
       console.log(`Você tem disponível ${dadosCliente.valorLimite}`);
        return true   
   } else {
-      console.log("Você não tem  disponível" );
+      console.log("Você não tem disponível" );
       return false
   }
 }
