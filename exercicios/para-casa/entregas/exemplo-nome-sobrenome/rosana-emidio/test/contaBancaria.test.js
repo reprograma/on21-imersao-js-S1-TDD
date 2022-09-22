@@ -33,17 +33,13 @@ describe('Conta bancaria', () => {
         expect(saldo).toEqual(52)
     })
 
-    //Testar se o saldo é insuficiente e possui limite, retira o valor do limite
-
-    test("Validar saque", () => {
+    test("Saque autorizado", () => {
         const vouSacarIsso = saque(50)
         expect(vouSacarIsso).toEqual(2)
     })
-    //testar se o saldo é insuficiente e não possui limite
-    test("Saque com saldo insuficiente e sem limite", () => {
-  
-        queroSacar = 300
-        expect(saque(queroSacar)).toBe("Você não possui saldo e nem limite para saque")
+    test("Sem saldo e limite insuficiente", () => {
+        const vouSacar = saque(300)     
+        expect(vouSacar).toBe("Você não possui saldo e nem limite para saque")
     })
 
     
