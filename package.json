@@ -6,15 +6,15 @@
   "scripts": {
     "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/reprograma/on21-imersao-js-S1-TDD.git"
-  },
+  "repository": "git+https://github.com/reprograma/on21-imersao-js-S1-TDD.git",
   "keywords": [],
-  "author": "",
+  "author": "daniszcode <daniele.marques@creditas.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/reprograma/on21-imersao-js-S1-TDD/issues"
+  },
+  "transform": {
+    "\\.js$": "<rootDir>/node_modules/babel-jest"
   },
   "homepage": "https://github.com/reprograma/on21-imersao-js-S1-TDD#readme",
   "devDependencies": {
