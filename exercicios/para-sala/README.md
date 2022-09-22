@@ -1,4 +1,5 @@
-# Exercícios de Sala 🏫  
+# Exercícios de Sala 🏫
+
 ---
 
 Terminou o exercício? Dá uma olhada nessa checklist e confere se tá tudo certinho, combinado?!
@@ -9,85 +10,86 @@ Terminou o exercício? Dá uma olhada nessa checklist e confere se tá tudo cert
 - [ ] Adicionei as mudanças. (`git add .` para adicionar todos os arquivos, ou `git add nome_do_arquivo` para adicionar um arquivo específico)
 - [ ] Commitei a cada mudança significativa ou na finalização do exercício (`git commit -m "Mensagem do commit"`)
 - [ ] Pushei os commits na minha branch (`git push origin nome-da-branch`)
+
 ---
+
 ## Testes Unitários
+
 ##### 1) Escreva um teste para função abaixo:
 
 ```js
-function convertCelsiusToFahrenheit(temperature){
-    var tempConverte = temperature * 9 / 5 + 32;
-     
-    return tempConverted
+function convertCelsiusToFahrenheit(temperature) {
+  var tempConverte = (temperature * 9) / 5 + 32;
+
+  return tempConverted;
 }
 ```
+
 ##### 2) Escreva ao menos um teste para a função abaixo:
 
 ```js
-function checkEvenNumber(num){
-    let result = '';
+function checkEvenNumber(num) {
+  let result = "";
 
-    if(isNaN(num)) {
-        result = num + " não é um número";
+  if (isNaN(num)) {
+    result = num + " não é um número";
+  } else {
+    if (num % 2 == 0) {
+      result = num + " é um número par";
     } else {
-        if (num % 2 == 0) {
-            result = num + " é um número par";
-        } else {
-            result = num + " é um número ímpar";
-        }
+      result = num + " é um número ímpar";
     }
+  }
 
-    return result;
+  return result;
 }
 ```
 
 ##### 3) Escreva ao menos um teste para a função abaixo:
 
 ```js
-function jokenpo(jogada1, jogada2){
+function jokenpo(jogada1, jogada2) {
+  if (jogada1 === jogada2) {
+    return "Empate!";
+  }
 
-    if (jogada1 === jogada2){
-        return 'Empate!';
-    }
+  if (
+    (jogada1 === "pedra" && jogada2 === "papel") ||
+    (jogada1 === "papel" && jogada2 === "tesoura") ||
+    (jogada1 === "tesoura" && jogada2 === "pedra")
+  ) {
+    return "Jogador 2 venceu!";
+  }
 
-    if ((jogada1 === 'pedra' && jogada2 === 'papel')
-        || (jogada1 === 'papel' && jogada2 === 'tesoura')
-        || (jogada1 === 'tesoura' && jogada2 === 'pedra')) {
-      return 'Jogador 2 venceu!';
-   }
-
-   return 'Jogador 1 venceu!';
+  return "Jogador 1 venceu!";
 }
 ```
 
 ##### 4) Escreva um para a função abaixo, ela retorna as possíveis combinações de caracteres de uma string em um array.
 
 ```js
-function generateCombinations(word)
-{
-    const chars = [];
-    for (let x = 0, y = 1; x < word.length; x++, y++) 
-    {
-        chars[x] = word.substring(x, y);
-    }
-    const combinations = [];
-    let temp = "";
-    const combinationsLen = Math.pow(2, chars.length);
+function generateCombinations(word) {
+  const chars = [];
+  for (let x = 0, y = 1; x < word.length; x++, y++) {
+    chars[x] = word.substring(x, y);
+  }
+  const combinations = [];
+  let temp = "";
+  const combinationsLen = Math.pow(2, chars.length);
 
-    for (let i = 0; i < combinationsLen; i++)
-    {
-        temp = "";
-        for (let j = 0; j < chars.length; j++) {
-            if ((i & Math.pow(2,j))){ 
-                temp += chars[j];
-            }
-        }
-        if (temp !== "")
-        {
-            combinations.push(temp);
-        }
+  for (let i = 0; i < combinationsLen; i++) {
+    temp = "";
+    for (let j = 0; j < chars.length; j++) {
+      if (i & Math.pow(2, j)) {
+        temp += chars[j];
+      }
     }
-    
-    return combinations;
+    if (temp !== "") {
+      combinations.push(temp);
+    }
+  }
+
+  return combinations;
 }
 ```
 
@@ -95,22 +97,24 @@ function generateCombinations(word)
 
 ```js
 function allKeys(obj) {
-    if (!isObject(obj)) {
-        return [];
-    }
-    
-    const keys = [];
-    for (const key in obj){
-        keys.push(key);
-    } 
-    return keys;
+  if (!isObject(obj)) {
+    return [];
+  }
+
+  const keys = [];
+  for (const key in obj) {
+    keys.push(key);
+  }
+  return keys;
 }
 function isObject(obj) {
-    const type = typeof obj;
-    return type === 'function' || type === 'object' && !!obj;
+  const type = typeof obj;
+  return type === "function" || (type === "object" && !!obj);
 }
 ```
+
 ---
+
 ## TDD
 
 ##### 6) Considere o teste abaixo e escreva a função para que o teste passe.
@@ -119,13 +123,13 @@ function isObject(obj) {
 // A função soma dois números, caso os números sejam iguais, a soma é triplicada
 
 describe("Sum function", () => {
-    test("(5, 1) => 6)", () => {
-        expect(sum(5, 1)).toEqual(6);
-    });
+  test("(5, 1) => 6)", () => {
+    expect(sum(5, 1)).toEqual(6);
+  });
 
-    test("(1, 1) => 6)", () => {
-        expect(sum(1, 1)).toEqual(6);
-    });
+  test("(1, 1) => 6)", () => {
+    expect(sum(1, 1)).toEqual(6);
+  });
 });
 ```
 
@@ -133,17 +137,18 @@ describe("Sum function", () => {
 
 ```js
 describe("RevertString function", () => {
-    test("'casa' => 'asac'", () => {
-        expect(revert('casa')).toEqual('asac');
-    });
+  test("'casa' => 'asac'", () => {
+    expect(revert("casa")).toEqual("asac");
+  });
 
-    test("'javascript' => 'tpircsavaj'", () => {
-        expect(revert('javascript')).toEqual('tpircsavaj');
-    });
+  test("'javascript' => 'tpircsavaj'", () => {
+    expect(revert("javascript")).toEqual("tpircsavaj");
+  });
 });
 ```
 
 ##### 8) Usando TDD:
+
 - Crie uma classe chamada Calculadora;
 - Crie os métodos: soma, subtração, multiplicação, divisão e fatorial;
 - Use a criatividade e crie um último método que utilize pelo menos dois dos métodos criados anteriormente.
