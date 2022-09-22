@@ -1,4 +1,4 @@
-const receberMoedas = require('../resolucao/calculoTroco')
+const receberMoedas = require('./calculoTroco')
   
 describe('Troco', () => {
   const moedasDisponiveis = [1, 0.50, 0.25, 0.10, 0.05, 0.01]
