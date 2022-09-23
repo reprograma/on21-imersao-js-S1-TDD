@@ -12,24 +12,55 @@ Use a abordagem Red - Green - Refactor para desenvolver essa aplicação.*/
 const contaBancaria = require("./database");
 
 function consultaSaldo(id){
-    const localizarId = contaBancaria.find((x) => x.id == id);
+    let localizarId = contaBancaria.find((x) => x.id == id);
     const saldoEmconta = localizarId.saldo;
     return saldoEmconta
-}
+};
 
-const saque = (numero) => {
-    if (numero<=saldoEmconta){
-        novoSaldo = saldoEmconta - numero; 
-        return `Seu saldo agora é de ${novoSaldo}`
+function consultaLimite(id){
+    let localizarId = contaBancaria.find((x) => x.id == id);
+    const limite = localizarId.limite; 
+    return limite
+};
+
+function saque(id, numero){
+    const recuperaSaldo = consultaSaldo(id);
+    const limite = consultaLimite(id); 
+    const saldoElimite = recuperaSaldo + limite;
+
+    if (numero<=recuperaSaldo){
+        novoSaldo = recuperaSaldo - numero; 
+        return `Saque no valor de ${numero} efetuado. Seu nono saldo é de ${novoSaldo}`
     }
-    else if (numero>saldoEmconta){
+    else if (numero>recuperaSaldo){
         if (numero <= saldoElimite){
-            novoSaldo = saldoEmconta - numero;
-            return `Seu saldo agora é ${novoSaldo}`
+            novoSaldo = recuperaSaldo - numero;
+            return `Saque no valor de ${numero} efetuado. Seu nono saldo é de ${novoSaldo}`
         }
     }
     else if (numero>saldoElimite){}
                 return "Saldo insuficiente. Saque não realizado"
 }; 
 
-module.exports = {consultaSaldo , saque}; 
+function resjustaLimite (id, numero){
+    
+    limiteAtual = consultaLimite(id);
+
+    limitePreAprovado = ((limiteAtual/100)*20) + limiteAtual;
+
+    valorLimiteDesejado = numero;
+
+    if (valorLimiteDesejado<=limitePreAprovado){
+
+        novoLimite = valorLimiteDesejado; 
+
+        return `Seu novo limite é de  ${novoLimite}`
+    }
+
+    else if (valorLimiteDesejado>limitePreAprovado){
+        return "Limite desejado é superior ao pré aprovado. Consulte seu gerente"
+    }
+}; 
+console.log(resjustaLimite(1, 700));
+
+module.exports = {consultaSaldo , saque, resjustaLimite}; 
