@@ -9,11 +9,27 @@ class Banco {
         return this.saldo;
     }
     saque(valor) {
-        if (this.saldo - valor < 0) {
-            const saldoNegativo = this.saldo - valor;
-            return saldoNegativo;
+        const novolimite = 0
+        const novosaldo = this.saldo -= valor
+
+        if (valor >= this.saldo) {
+
+            return novosaldo;
         }
-        return this.saldo -= valor;
+        else {
+            const novosaldodisponviel = (this.saldo + this.limite)
+            if (novosaldodisponviel <= valor) {
+                if (novosaldo < 0) {
+                    const novolimite = this.limite - novosaldo
+                    this.limite = novolimite
+                }
+
+                return novosaldo;
+            }
+            else {
+                return 0;
+            }
+        }
     }
     deposito(valor) {
         return this.saldo += valor;
