@@ -1,4 +1,4 @@
-const { consultaSaldo , saque, resjustaLimite } = require("./resolucao");
+const { consultaSaldo , saque, resjustaLimite, deposito} = require("./resolucao");
 
 describe("transações bancárias de consulta de saldo, saque e aumento de limite", ()=>{ 
     test("Consultar saldo de conta", ()=>{
@@ -18,5 +18,8 @@ describe("transações bancárias de consulta de saldo, saque e aumento de limit
     })
     test("verificar resultado na hipótese do  novo limite desejado ser superior ao pré aprovado", ()=>{
         expect (resjustaLimite(1, 700)).toEqual("Limite desejado é superior ao pré aprovado. Consulte seu gerente");
+    })
+    test("verificar novo saldo após depósito", ()=>{
+        expect (deposito(1, 800)).toEqual("Seu novo saldo é 2800");
     })
 });

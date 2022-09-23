@@ -30,11 +30,13 @@ function saque(id, numero){
 
     if (numero<=recuperaSaldo){
         novoSaldo = recuperaSaldo - numero; 
+        contaBancaria.saldo=novoSaldo; 
         return `Saque no valor de ${numero} efetuado. Seu nono saldo é de ${novoSaldo}`
     }
     else if (numero>recuperaSaldo){
         if (numero <= saldoElimite){
             novoSaldo = recuperaSaldo - numero;
+            contaBancaria.saldo=novoSaldo; 
             return `Saque no valor de ${numero} efetuado. Seu nono saldo é de ${novoSaldo}`
         }
     }
@@ -54,6 +56,8 @@ function resjustaLimite (id, numero){
 
         novoLimite = valorLimiteDesejado; 
 
+        contaBancaria.limite = novoLimite;
+
         return `Seu novo limite é de  ${novoLimite}`
     }
 
@@ -61,6 +65,12 @@ function resjustaLimite (id, numero){
         return "Limite desejado é superior ao pré aprovado. Consulte seu gerente"
     }
 }; 
-console.log(resjustaLimite(1, 700));
 
-module.exports = {consultaSaldo , saque, resjustaLimite}; 
+function deposito(id, valor){
+    saldoAtual = consultaSaldo(id);
+    novoSaldo = saldoAtual + valor; 
+    contaBancaria.saldo = novoSaldo;
+    return `Seu novo saldo é ${novoSaldo}`
+}
+
+module.exports = {consultaSaldo , saque, resjustaLimite, deposito}; 
