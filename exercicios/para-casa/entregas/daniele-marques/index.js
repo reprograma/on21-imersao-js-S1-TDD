@@ -75,9 +75,7 @@ const contaBancaria = {
     if (this.block === "sim") {
       return `Você cancelou sua conta`;
     }
-    if (this.block === "não") {
-      return `Sua conta está ativa`;
-    }
+    return `Sua conta está ativa`;
   },
 };
 
@@ -101,7 +99,7 @@ contaBancaria.saldo.retirarSaldo();
 contaBancaria.limite.CreateLimite();
 contaBancaria.limite.AumentarLimite();
 contaBancaria.limite.retirarLimite();
-contaBancaria.block = "não";
+contaBancaria.block = "sim";
 
 console.log(contaBancaria.saldo.verSaldo());
 console.log(contaBancaria.limite.verLimite());
