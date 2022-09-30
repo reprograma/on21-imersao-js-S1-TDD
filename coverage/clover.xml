@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1664483298362" clover="3.2.0">
-  <project timestamp="1664483298362" name="All files">
-    <metrics statements="49" coveredstatements="48" conditionals="24" coveredconditionals="23" methods="11" coveredmethods="11" elements="84" coveredelements="82" complexity="0" loc="49" ncloc="49" packages="2" files="2" classes="2"/>
+<coverage generated="1664537175196" clover="3.2.0">
+  <project timestamp="1664537175196" name="All files">
+    <metrics statements="72" coveredstatements="69" conditionals="38" coveredconditionals="34" methods="19" coveredmethods="19" elements="129" coveredelements="122" complexity="0" loc="72" ncloc="72" packages="2" files="2" classes="2"/>
     <package name="para-casa.entregas.julia-valerio">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="23" coveredstatements="21" conditionals="14" coveredconditionals="11" methods="8" coveredmethods="8"/>
       <file name="contaBancaria.js" path="C:\Users\Julia\Documents\Reprograma\on21-imersao-js-S1-TDD\exercicios\para-casa\entregas\julia-valerio\contaBancaria.js">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="23" coveredstatements="21" conditionals="14" coveredconditionals="11" methods="8" coveredmethods="8"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="15" count="3" type="cond" truecount="3" falsecount="1"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="27" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="43" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="51" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
       </file>
     </package>
     <package name="para-sala">
