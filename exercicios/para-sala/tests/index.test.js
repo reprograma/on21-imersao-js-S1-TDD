@@ -1,4 +1,4 @@
-const { convertCelsiusToFahrenheit, checkEvenNumber, sum, revert } = require('../index')
+const { convertCelsiusToFahrenheit, checkEvenNumber, soma, reverterString, calculadora } = require('../index')
 
 describe("Convert celsius function", () => {
     test("it should convert from celsius to fahrenheit", () => {
@@ -33,24 +33,24 @@ describe("Check even number function", () => {
 
 // 6) Considere o teste abaixo e escreva a função para que o teste passe.
 // A função soma dois números, caso os números sejam iguais, a soma é triplicada
-describe("Sum function", () => {
-    test("it should sum two numbers", () => {
-        expect(sum(5, 1)).toEqual(6);
+describe("Função soma", () => {
+    test("deve retornar a soma de 2 números", () => {
+        expect(soma(5, 1)).toEqual(6);
     });
 
-    test("it should multiplicate the sum result", () => {
-        expect(sum(1, 1)).toEqual(6);
+    test("deve retornar a soma triplicada, quando números iguais", () => {
+        expect(soma(1, 1)).toEqual(6);
     });
 });
 
+/** 7) Considere o teste abaixo e escreva a função para que o teste passe. */
 
-// 7) Considere o teste abaixo e escreva a função para que o teste passe.
-describe("RevertString function", () => {
+describe("Função reverterString", () => {
     test("'casa' => 'asac'", () => {
-        expect(revert('casa')).toEqual('asac');
+        expect(reverterString('casa')).toEqual('asac');
     });
-    
+
     test("'javascript' => 'tpircsavaj'", () => {
-        expect(revert('javascript')).toEqual('tpircsavaj');
+        expect(reverterString('javascript')).toEqual('tpircsavaj');
     });
 });

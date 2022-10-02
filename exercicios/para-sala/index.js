@@ -24,20 +24,30 @@ function checkEvenNumber(num){
 
 // ------------------ exercicios de tdd --------------------
 
-function sum(num1, num2) {
-    if(num1==num2) {
-        return 3*(num1+num2)
+//Exercicio TDD 6
+
+function soma(num1, num2) {
+    if(num1 !== num2){
+        return num1 + num2;
     }
-    return num1+num2
+    return (num1 + num2) * 3;
 }
 
-function revert(string) {
-    return string.split("").reverse().join("")
+//Exercicio 7
+
+function reverterString(palavra) {
+    return palavra.split("").reverse().join("")
 }
 
+// Exercicio 8
+
+function calculadora(num1, num2) {
+    
+}
 module.exports = {
     convertCelsiusToFahrenheit,
     checkEvenNumber,
-    sum,
-    revert
+    soma,
+    reverterString,
+    calculadora
 };
