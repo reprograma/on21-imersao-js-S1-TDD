@@ -36,12 +36,12 @@ describe('Conta Bancária', () => {
          expect(result).toBe('Saldo insuficiente para saque')
      })
      
-     test('Deve retornar aumentar limite com sucesso', () => {
+     test('Deve aumentar limite com sucesso', () => {
         conta.aumentarLimite(1000)
          expect(conta.limite).toBe(1500)
      })
 
-     test('Deve retornar reduzir limite com sucesso', () => {
+     test('Deve reduzir limite com sucesso', () => {
         conta.reduzirLimite(300)
          expect(conta.limite).toBe(200)
      })
@@ -51,7 +51,7 @@ describe('Conta Bancária', () => {
          expect(result).toBe('Não é possível aumentar limite, por favor ative o limite e tente novamente')
      })
 
-     test('Deve retornar erro ao reeuzir limite com limite desativado', () => {
+     test('Deve retornar erro ao reduzir limite com limite desativado', () => {
         conta.limiteStatus(false)
         const result = conta.reduzirLimite(300)
          expect(result).toBe('Não é possível reduzir limite, por favor ative o limite e tente novamente')
