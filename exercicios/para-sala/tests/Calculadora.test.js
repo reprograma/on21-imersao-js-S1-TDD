@@ -7,27 +7,17 @@ const Calculadora = require("../Calculadora")
 describe("Calculadora", () => {
     const calculadoraBasica = new Calculadora(2, 2)
 
-    test("Soma", () => {
+    test("Deve fazer a soma entre dois números", () => {
         expect(calculadoraBasica.soma()).toEqual(4)
-    })
-
-    test("Subtração", () => {
+    });
+    test("Deve fazer a subtracao entre dois números", () => {
         expect(calculadoraBasica.subtracao()).toEqual(0)
-    })
-
-    test("Multiplicao", () => {
-        expect(calculadoraBasica.multiplicacao()).toEqual(4)
-    })
-
-    test("Divisao", () => {
+    });
+    test("Deve fazer a divisao entre dois números", () => {
         expect(calculadoraBasica.divisao()).toEqual(1)
-    })
+    });
 
-    test("Fatorial", () => {
-        expect(calculadoraBasica.fatorial()).toEqual(2)
-    })
-
-    test("Fatorial da Soma", () => {
-        expect(calculadoraBasica.fatorialSoma()).toEqual(24)
-    })
+    test("Deve fazer a multiplicação entre dois números", () => {
+        expect(calculadoraBasica.multiplicacao()).toEqual(4)
+    });
 })
